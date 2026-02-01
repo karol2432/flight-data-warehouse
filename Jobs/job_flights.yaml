@@ -1,0 +1,30 @@
+resources:
+  jobs:
+    flights_job:
+      name: flights_job
+      tasks:
+        - task_key: Bronze_ETL
+          notebook_task:
+            notebook_path: /Workspace/Users/karol.holody2432@gmail.com/bronze_load
+            source: WORKSPACE
+        - task_key: Silver_ETL
+          depends_on:
+            - task_key: Bronze_ETL
+          notebook_task:
+            notebook_path: /Workspace/Users/karol.holody2432@gmail.com/silver_load
+            source: WORKSPACE
+        - task_key: Gold_ETL
+          depends_on:
+            - task_key: Silver_ETL
+          notebook_task:
+            notebook_path: /Workspace/Users/karol.holody2432@gmail.com/gold_load
+            source: WORKSPACE
+        - task_key: Visualisation_ETL
+          depends_on:
+            - task_key: Gold_ETL
+          notebook_task:
+            notebook_path: /Workspace/Users/karol.holody2432@gmail.com/Visualisation
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED
