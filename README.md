@@ -33,3 +33,19 @@ The project follows a three-layer architecture:
 ## Automation
 The full data pipeline is orchestrated using a Databricks Job described in a YAML configuration file:
 
+The job runs the following tasks in sequence:
+1. Bronze ETL  
+2. Silver ETL  
+3. Gold ETL  
+4. Visualization layer  
+
+## Example Analyses
+- On-time performance by airline  
+- Flight delays by airport  
+- Daily flight volume trends  
+
+## What I Learned
+- Designing data warehouse schemas  
+- Implementing SCD in practice  
+- Building end-to-end ETL pipelines in Databricks  
+- Automating workflows using YAML-based job definitions 
