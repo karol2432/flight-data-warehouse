@@ -23,9 +23,6 @@ The project follows a three-layer architecture:
 - **Silver** – data cleaning and validation  
 - **Gold** – analytical tables and aggregations  
 
-![ERD](diagrams/erd.png)  
-![Workflow](diagrams/workflow.png)
-
 ## Key Features
 - Incremental data loading  
 - Slowly Changing Dimensions (SCD Type 2)  
